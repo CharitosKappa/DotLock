@@ -9,7 +9,7 @@ Spec: SPEC §§2,4; acceptance: TASKS T2. All implementation remains in
   HKDF-SHA256 and random-nonce XChaCha20-Poly1305 with caller-provided AAD.
 - [x] Verify negative trait assertions: Key has no Debug, Display, Copy or Clone.
 - [x] Run Rust fmt/clippy/tests and Flutter analyze/tests; update changelog.
-- [ ] Commit T2 and open a separate PR. Tick the parent task only upon merge.
+- [x] Commit T2 and open a separate PR. Tick the parent task only upon merge.
 
 Borrowed inputs remain caller-owned; owned credential/plaintext/output buffers
 use zeroize. Decryption must zeroize its buffer even on authentication failure.
