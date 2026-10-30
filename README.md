@@ -30,8 +30,9 @@ flutter test
 ```
 
 The Rust workspace has six core crates (including test-vector support) and the
-server binary. They intentionally implement no vault behavior yet. Crypto starts
-at T2; frozen vectors start at T5; HTTP service implementation starts at T24.
+server binary. Symmetric primitives are implemented in `dotlock-crypto` (T2);
+there are no vault operations yet. Frozen vectors start at T5 and the HTTP
+service implementation starts at T24.
 CI runs Rust checks on Linux, macOS and Windows, plus Flutter checks on Linux.
 
 ## Local tool locations (initial Windows setup)
