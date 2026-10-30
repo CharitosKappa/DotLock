@@ -39,6 +39,8 @@ Read these before any task:
 ## Workflow for every task
 
 1. Open `docs/TASKS.md`, take the **first unchecked task** unless told otherwise. Read the SPEC sections it cites.
+   For approved phased tasks, take the first ready unchecked subtask; deferred coverage
+   parents do not block the implementations they depend on (see T5 in TASKS.md).
 2. Plan briefly, then write tests first.
 3. Implement the smallest change that passes.
 4. Run the checks below; all must pass.

@@ -219,3 +219,9 @@ Cloud objects: the same `.obj` bytes as local (§6), plus per vault one `recover
 object ids, plaintexts, nonces) and expected outputs for: Argon2id, every HKDF label in §4, slot seal,
 object seal (small and multi-chunk), index CBOR, BIP-39 mapping, cloud auth header. Vectors are frozen once
 merged; v2 adds a new folder.
+
+Coverage is staged: T5a freezes the implemented primitives, credentials, BIP-39
+and raw STREAM bodies. Slot/object/index and cloud-auth vectors are added alongside
+their implementations after the relevant format/protocol questions are resolved
+(T5b; SPEC_QUESTIONS Q3–Q5). Raw AEAD/STREAM fixtures do not define slot/object bytes.
+Existing frozen fixtures must never be rewritten when later coverage is added.
