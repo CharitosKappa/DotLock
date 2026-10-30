@@ -4,11 +4,11 @@ Read AGENTS.md, PLAN, SPEC §§3,4, TASKS, TESTING and THREAT_MODEL.
 T3 was merged as PR #3 after successful CI on all runners, including the
 dedicated 2 GiB Linux test (run 41097450189).
 
-Status: stopped at the spec review gate required by AGENTS.md golden rule 1.
+Status: user approved custom recovery phrase deferral on 2026-10-30.
 No T4 credential or phrase behavior has been implemented.
 See SPEC_QUESTIONS Q1/Q2 for the missing custom recovery phrase policy.
 
-Proposed scope, awaiting approval: defer custom recovery phrases from v1, retain
+Approved scope: defer custom recovery phrases from v1, retain
 pattern/passphrase credentials and generated/validated 12-word English BIP-39.
 If approved, change SPEC/TASKS explicitly before implementation. If custom
 phrases are retained, settle Q1 and Q2 in a spec PR first.
