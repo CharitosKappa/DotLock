@@ -8,8 +8,8 @@ Format: `## Qn — <short title>` · task · SPEC section · question · propose
 
 Task: T4. SPEC: §4. Status: resolved by user approval on 2026-10-30.
 
-The spec requires an estimate of at least 100 bits before accepting a user-written
-recovery phrase, but defines no estimator, dictionaries, version, or scoring rules.
+The original spec required an estimate of at least 100 bits before accepting a user-written
+recovery phrase, but defined no estimator, dictionaries, version, or scoring rules.
 Different choices accept different secrets. String length or character variety
 alone must not be treated as proof of 100 bits of entropy; stretching a weak
 phrase does not supply missing entropy.
@@ -29,7 +29,7 @@ as guaranteed entropy.
 Task: T4. SPEC: §4. Status: deferred beyond v1 by the approved Q1 decision.
 
 Generated `phrase_entropy` is explicitly 16 bytes. The custom phrase Argon2id
-formula fixes salt, memory, passes and lanes, but omits the output length.
+formula fixed salt, memory, passes and lanes, but omitted the output length.
 Argon2 with a 16-byte output is not equivalent to truncating its 32-byte output;
 this choice affects every derived recovery key and future restore compatibility.
 

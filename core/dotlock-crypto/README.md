@@ -3,6 +3,32 @@
 Implements SPEC v1 §§2,4 with upstream RustCrypto crates. There is no vault
 serialization here yet.
 
+## Credentials and recovery (T4)
+
+`credentials::Pattern::new` validates drawn dots and inserts all unvisited lattice
+points crossed before encoding `01 05` plus canonical dots. Explicit repeats,
+out-of-range dots, fewer than six canonical dots and no turns are rejected.
+Its credential bytes can be passed directly to credential-key derivation.
+
+`encode_passphrase` returns `02` plus UTF-8 NFKD. The eight-character minimum
+counts normalized Unicode scalar values; whitespace is never trimmed. Upstream
+Unicode decomposition tables feed zeroizing buffers; stable counting sort orders
+combining marks without unzeroized iterator/sort buffers or quadratic runs.
+
+`RecoveryPhrase::generate` uses 16 OS-random bytes. `words` exposes 12 English
+BIP-39 words through opaque `SecretText`; `parse` verifies English words, count
+and checksum, returning the original entropy for recovery HKDF, never a BIP-39
+seed. It accepts whitespace-separated restore words. Creation uses generated
+entropy; `from_entropy` also supports core fixtures/interoperability. Parsing
+valid BIP-39 for restore does not certify how the original entropy was generated.
+No arbitrary custom-phrase strength-estimation/KDF path exists in v1.
+
+The pattern meter is advisory: Fair at eight dots or two turns; Strong at twelve
+dots and four turns. Estimated bits use a permutation-count upper bound minus
+low-turn/simple-shape and perimeter penalties, not a guaranteed entropy measure.
+Neither strength labels nor estimated bits affect format validity or recovery
+acceptance. Owned secret types have no Debug/Display/Clone/Copy implementation.
+
 - `Key` and `SecretBytes` own zeroizing storage and have no Debug, Display,
   Clone or Copy implementations. Borrowed byte views must never be logged.
 - `Argon2Params` defaults to 65536 KiB, 3 passes, 1 lane; every derivation
