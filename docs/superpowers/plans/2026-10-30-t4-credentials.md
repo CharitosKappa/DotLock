@@ -1,27 +1,26 @@
-# T4 requirements review
+# T4 credentials implementation record
 
-Read AGENTS.md, PLAN, SPEC §§3,4, TASKS, TESTING and THREAT_MODEL.
-T3 was merged as PR #3 after successful CI on all runners, including the
-dedicated 2 GiB Linux test (run 41097450189).
+Scope: SPEC §§3,4 and TASKS T4. User approved custom recovery phrase deferral;
+spec PR #4 was merged after updated CI passed. No additional passphrase or KDF
+is applied to BIP-39 entropy. Pattern/passphrase credentials remain supported.
 
-Status: user approved custom recovery phrase deferral on 2026-10-30.
-No T4 credential or phrase behavior has been implemented.
-See SPEC_QUESTIONS Q1/Q2 for the missing custom recovery phrase policy.
+- [x] Write failing table tests for lattice-point auto-fill, repeats, validity,
+  byte prefixes, NFKD/whitespace and English BIP-39 count/checksum.
+- [x] Implement Pattern, encode_passphrase, RecoveryPhrase and SecretText in
+  dotlock-crypto, with owned secrets in zeroizing buffers and no Debug/Display.
+- [x] Property-test canonical pattern idempotence, BIP-39 mapping against upstream
+  Mnemonic and restore round trips; check normalization against upstream NFKD.
+- [x] Add advisory pattern-strength guidance independent of format validity.
+- [x] Source review: identified upstream NFKD iterator's unzeroized reorder buffer;
+  replaced it with decomposition callbacks and zeroizing stable counting-sort
+  storage. Reviewer confirmed the finding resolved, with no new actionable defects.
+- [x] Run final Rust/Flutter checks and the existing 2 GiB release test.
+- [x] Commit implementation and open a separate PR. Tick T4 only upon merge.
 
-Approved scope: defer custom recovery phrases from v1, retain
-pattern/passphrase credentials and generated/validated 12-word English BIP-39.
-If approved, change SPEC/TASKS explicitly before implementation. If custom
-phrases are retained, settle Q1 and Q2 in a spec PR first.
+The English wordlist comes from bip39; bit packing/checksum buffers are owned
+here to avoid unzeroized library mnemonic temporaries. SHA-256 remains upstream.
+No frozen vectors changed; format vectors remain T5. Seven credential tests pass,
+including randomized upstream comparisons. Secret cleanup proof is ownership/source
+review, not an unsafe read of freed memory or a compiler/register erasure claim.
 
-Implementation outline after the spec decision:
-
-1. Write table-driven pattern tests: bounds, repeats, six-dot minimum, direction
-   changes, lattice points auto-added in order, and byte encoding prefixes.
-2. Test NFKD passphrase encoding, normalized character count, eight-character
-   minimum and preserved whitespace. All owned secret buffers must zeroize.
-3. Test BIP-39 generation/parsing, 12-word/128-bit restriction, English words,
-   invalid words/checksums and phrase round trips. No Debug/Display on secrets.
-4. Add advisory pattern-strength tests against §3's length/turn guidance; keep
-   strength reporting separate from format validity and recovery acceptance.
-5. Implement the agreed scope only in dotlock-crypto, run required Rust/Flutter
-   checks, source review, changelog and draft PR; tick T4 only after merge.
+Final verification: Rust fmt, Clippy with warnings denied, workspace tests (18 regular crypto tests), generated 2 GiB release test, Flutter analyze and bootstrap test all passed locally. Hosted CI and implementation PR review remain pending.

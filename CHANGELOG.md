@@ -4,6 +4,11 @@ All notable changes to DotLock are recorded here, newest first.
 
 ## Unreleased
 
+- T4: approved v1 recovery scope merged in PR #4. Added pattern validation and
+  lattice-point auto-fill, NFKD passphrase encoding, advisory strength guidance,
+  and 128-bit English BIP-39 generation/restoration with checksum validation.
+  Owned credentials, normalization buffers, entropy and recovery text zeroize;
+  secret types do not implement Debug/Display. Custom recovery phrases deferred.
 - T3 completed: PR #3 merged after all CI passed, including the 2 GiB Linux test.
 - T4 requirements review started; custom recovery phrase acceptance and Argon2
   output length questions recorded before implementation, per AGENTS.md.
