@@ -4,6 +4,9 @@ All notable changes to DotLock are recorded here, newest first.
 
 ## Unreleased
 
+- T4 completed: PR #5 merged after all CI passed; credentials and generated
+  BIP-39 recovery are now on main.
+
 - T4: approved v1 recovery scope merged in PR #4. Added pattern validation and
   lattice-point auto-fill, NFKD passphrase encoding, advisory strength guidance,
   and 128-bit English BIP-39 generation/restoration with checksum validation.

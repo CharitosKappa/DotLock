@@ -23,4 +23,4 @@ No frozen vectors changed; format vectors remain T5. Seven credential tests pass
 including randomized upstream comparisons. Secret cleanup proof is ownership/source
 review, not an unsafe read of freed memory or a compiler/register erasure claim.
 
-Final verification: Rust fmt, Clippy with warnings denied, workspace tests (18 regular crypto tests), generated 2 GiB release test, Flutter analyze and bootstrap test all passed locally. Hosted CI and implementation PR review remain pending.
+Final verification: Rust fmt, Clippy with warnings denied, workspace tests (18 regular crypto tests), generated 2 GiB release test, Flutter analyze and bootstrap test all passed locally. Hosted CI passed on Linux, macOS, Windows and Flutter (runs 41100440111 and 41100445798). PR #5 merged on 2026-10-30 after user authorization. T4 is complete.
