@@ -12,7 +12,7 @@ Format: **ID — title** · SPEC refs · Done when.
     app, bootstrap test, docs and CI. SDK-generated hosts are committed separately
     and exceed the approximate 600-line guideline. Keep T1 unchecked until CI
     passes and the task is merged.
-- [ ] **T2 — Symmetric primitives** · §2, §4 · `dotlock-crypto`: Argon2id wrapper (params struct, minimums enforced), HKDF with label constants, XChaCha20-Poly1305 seal/open with `aad`, zeroizing key newtypes. Done when: round-trip, wrong-key, wrong-aad and tamper tests pass; secrets don't implement `Debug`.
+- [x] **T2 — Symmetric primitives** · §2, §4 · `dotlock-crypto`: Argon2id wrapper (params struct, minimums enforced), HKDF with label constants, XChaCha20-Poly1305 seal/open with `aad`, zeroizing key newtypes. Done when: round-trip, wrong-key, wrong-aad and tamper tests pass; secrets don't implement `Debug`.
   - Split: T2a dependency manifest/lockfile (generated lockfile exceeds 600 lines);
     T2b primitive APIs, tests and documentation; T2c upstream HKDF source/licenses
     with temporary-buffer erasure patch. Keep unchecked until merged.
