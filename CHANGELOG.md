@@ -4,6 +4,9 @@ All notable changes to DotLock are recorded here, newest first.
 
 ## Unreleased
 
+- T5a completed: reviewed PR #7 merged after all CI passed. Primitive fixtures
+  are frozen; T5b format/auth coverage remains tracked separately.
+
 - T5 split approved and merged in PR #6. T5a adds public synthetic primitive
   fixtures, a deterministic non-writing check mode, exclusive initialization,
   frozen-byte/hash tests and CI checks on all Rust runners. Production APIs keep

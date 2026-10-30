@@ -25,9 +25,9 @@ Format: **ID — title** · SPEC refs · Done when.
   - Custom recovery phrase deferral approved on 2026-10-30; see SPEC_QUESTIONS Q1/Q2.
     Implementation and tests merged in PR #5 after all CI passed.
 - [ ] **T5 — Freeze v1 test vectors** · §12 · Generator binary + JSON vectors + a test that asserts them. Done when: regenerating produces byte-identical files and CI fails if outputs change.
-  - [ ] **T5a — Implemented primitive vectors**: Argon2id, §4 HKDF labels, raw
+  - [x] **T5a — Implemented primitive vectors**: Argon2id, §4 HKDF labels, raw
     AEAD/STREAM, credential encoding and BIP-39; generator and frozen-byte CI checks.
-    Implementation added in a separate PR; tick this subtask only when merged.
+    Merged in PR #7 after review and green CI on all runners; fixtures are frozen.
   - [ ] **T5b — Format/auth vectors**: pair slot/object/index vectors with T6–T9
     and cloud-auth vectors with T24 after SPEC_QUESTIONS Q3–Q5 are settled.
     Parent T5 remains unchecked until both phases are merged. Split approved by user.
