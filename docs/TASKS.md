@@ -7,7 +7,7 @@ Format: **ID — title** · SPEC refs · Done when.
 
 ## M1 — Crypto core (Rust)
 
-- [ ] **T1 — Scaffold repo and CI** · — · Cargo workspace with the six crates from `docs/PLAN.md`, empty Flutter app in `app/`, `server/` crate, GitHub Actions running fmt/clippy/test on ubuntu, macos, windows. Done when: CI is green on all three runners.
+- [x] **T1 — Scaffold repo and CI** · — · Cargo workspace with the six crates from `docs/PLAN.md`, empty Flutter app in `app/`, `server/` crate, GitHub Actions running fmt/clippy/test on ubuntu, macos, windows. Done when: CI is green on all three runners.
   - Split: T1a Rust workspace; T1b generated Flutter platform hosts; T1c empty
     app, bootstrap test, docs and CI. SDK-generated hosts are committed separately
     and exceed the approximate 600-line guideline. Keep T1 unchecked until CI
@@ -56,3 +56,4 @@ Format: **ID — title** · SPEC refs · Done when.
 - [ ] **T28 — Paywall and entitlements** · — · Free caps enforced in core (vault count, item count, backup quota), RevenueCat across StoreKit 2 / Play Billing / Microsoft Store, restore purchases, lifetime cross-platform unlock. Done when: sandbox purchases unlock Pro on each store.
 - [ ] **T29 — Localization and accessibility** · — · Top 10 languages, VoiceOver/TalkBack/Narrator pass, dynamic type. Done when: no untranslated strings; accessibility checklist passes.
 - [ ] **T30 — Release pipelines** · TESTING.md · Fastlane (iOS/macOS), Gradle AAB (Android), MSIX (Windows), notarized DMG, store metadata and privacy labels. Done when: a tagged release produces signed artifacts for all four platforms.
+
