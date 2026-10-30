@@ -1,7 +1,11 @@
 # DotLock Task List
 
 Work top to bottom. One task per session/PR. Tick the box when the task is merged.
-M1 and M2 are pure Rust and must be green before any UI work starts.
+M1 and M2 are pure Rust and must be green before any UI work starts. The approved
+M1 implementation gate is T1–T4 plus T5a. T5 is a coverage-tracking parent: T5b
+format vectors accompany T6–T9 after spec resolution, and auth vectors accompany
+T24 after protocol resolution. Do not block those implementations on missing
+future vectors, or mark their paired coverage complete before it exists.
 
 Format: **ID — title** · SPEC refs · Done when.
 
@@ -21,9 +25,11 @@ Format: **ID — title** · SPEC refs · Done when.
   - Custom recovery phrase deferral approved on 2026-10-30; see SPEC_QUESTIONS Q1/Q2.
     Implementation and tests merged in PR #5 after all CI passed.
 - [ ] **T5 — Freeze v1 test vectors** · §12 · Generator binary + JSON vectors + a test that asserts them. Done when: regenerating produces byte-identical files and CI fails if outputs change.
-  - Requirements review started; see SPEC_QUESTIONS Q3–Q5. Proposed split into
-    primitive vectors and later format/auth vectors awaits a scope decision.
-    No fixtures are frozen and no generator is implemented yet.
+  - [ ] **T5a — Implemented primitive vectors**: Argon2id, §4 HKDF labels, raw
+    AEAD/STREAM, credential encoding and BIP-39; generator and frozen-byte CI checks.
+  - [ ] **T5b — Format/auth vectors**: pair slot/object/index vectors with T6–T9
+    and cloud-auth vectors with T24 after SPEC_QUESTIONS Q3–Q5 are settled.
+    Parent T5 remains unchecked until both phases are merged. Split approved by user.
 
 ## M2 — Vault format and storage (Rust)
 

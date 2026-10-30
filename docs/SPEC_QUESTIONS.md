@@ -79,3 +79,7 @@ Proposal: split T5a (implemented credential/crypto/STREAM/BIP-39 vectors) from
 T5b (slot/object/index/auth vectors after their specs and implementations are
 settled). Adopt an explicit deterministic CBOR profile in a format spec PR before
 freezing serialized fixtures. Keep the parent T5 unchecked until all coverage exists.
+
+User approved the staged task order: T5a first, format vectors with T6–T9 and
+auth vectors with T24. This resolves scheduling only; deterministic serialization,
+slot format (Q4) and authentication (Q3) still require separate spec decisions.
