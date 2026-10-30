@@ -1,10 +1,12 @@
-//! Symmetric primitives for SPEC v1 §§2,4. No I/O, credentials or vault format.
+//! Crypto primitives for SPEC v1 §§2,4,6. No credentials or vault serialization.
 //! Borrowed secrets must be kept in caller-owned zeroizing storage.
 
 use argon2::{Algorithm, Argon2, Params, Version};
 use chacha20poly1305::{aead::AeadInPlace, KeyInit, XChaCha20Poly1305, XNonce};
 use rand_core::{OsRng, RngCore};
 use zeroize::Zeroizing;
+
+pub mod streaming;
 
 /// A 32-byte secret, erased on drop. Deliberately has no formatting or cloning.
 pub struct Key(Zeroizing<[u8; 32]>);
