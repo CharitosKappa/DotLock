@@ -8,6 +8,8 @@ use zeroize::Zeroizing;
 
 pub mod credentials;
 pub mod streaming;
+#[cfg(feature = "vector-fixtures")]
+pub mod vector_fixtures;
 
 /// A 32-byte secret, erased on drop. Deliberately has no formatting or cloning.
 pub struct Key(Zeroizing<[u8; 32]>);
@@ -165,6 +167,15 @@ pub fn seal(key: &Key, plaintext: &SecretBytes, aad: &[u8]) -> Result<Sealed, Cr
     OsRng
         .try_fill_bytes(&mut nonce)
         .map_err(|_| CryptoError::Randomness)?;
+    seal_with_nonce(key, plaintext, aad, nonce)
+}
+
+fn seal_with_nonce(
+    key: &Key,
+    plaintext: &SecretBytes,
+    aad: &[u8],
+    nonce: [u8; 24],
+) -> Result<Sealed, CryptoError> {
     let cipher = XChaCha20Poly1305::new(key.expose().into());
     let mut buffer = Zeroizing::new(plaintext.as_slice().to_vec());
     cipher

@@ -4,6 +4,10 @@ All notable changes to DotLock are recorded here, newest first.
 
 ## Unreleased
 
+- T5 split approved and merged in PR #6. T5a adds public synthetic primitive
+  fixtures, a deterministic non-writing check mode, exclusive initialization,
+  frozen-byte/hash tests and CI checks on all Rust runners. Production APIs keep
+  OS-generated nonces. T5b format/auth coverage remains deferred to its tasks.
 - T5 requirements review: recorded slot distinguishability/framing, cloud HMAC
   verification, and deterministic serialization questions before freezing v1 bytes.
 - T4 completed: PR #5 merged after all CI passed; credentials and generated

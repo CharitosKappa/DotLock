@@ -5,6 +5,13 @@ format compatibility.
 
 ## Testing
 
+- T5a primitive fixture gate (all Rust runners):
+  `cargo run -p dotlock-test-vectors --bin generate-vectors --locked -- --check`.
+  Workspace tests compare complete generated JSON bytes and an independent
+  frozen-file hash; CLI tests prove mismatch detection and overwrite refusal.
+  Fixtures contain PUBLIC synthetic inputs only. STREAM bodies are pinned with
+  complete-ciphertext SHA-256 and length; AEAD ciphertext is stored in full.
+  See `core/test-vectors/README.md`; T5b format/auth coverage is tracked separately.
 - T3 local proof (Windows, optimized build): generated 2 GiB encrypted/decrypted
   pipeline passed in 5.75 s with sampled peak working set 8.07 MiB. The source
   generates bytes and the sink verifies/counts them without storing the stream.

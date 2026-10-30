@@ -161,6 +161,16 @@ impl<R: Read> EncryptReader<R> {
         OsRng
             .try_fill_bytes(&mut nonce)
             .map_err(|_| io::Error::other("randomness unavailable"))?;
+        Self::with_nonce(source, key, plaintext_len, aad, nonce)
+    }
+
+    pub(super) fn with_nonce(
+        source: R,
+        key: &Key,
+        plaintext_len: u64,
+        aad: &[u8],
+        nonce: [u8; 19],
+    ) -> io::Result<Self> {
         let cipher = Cipher::Encrypt(Some(Encryptor::new(key.expose().into(), (&nonce).into())));
         Ok(Self {
             chunks: Chunks::new(source, cipher, plaintext_len, aad)?,
