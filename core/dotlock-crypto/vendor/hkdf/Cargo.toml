@@ -1,0 +1,11 @@
+[package]
+name = "hkdf"
+version = "0.13.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[dependencies]
+hmac = { version = "0.13", features = ["zeroize"] }
+zeroize = "1.8"
+kdf = { version = "0.1", optional = true }
