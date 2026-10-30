@@ -59,4 +59,3 @@ Format: **ID — title** · SPEC refs · Done when.
 - [ ] **T28 — Paywall and entitlements** · — · Free caps enforced in core (vault count, item count, backup quota), RevenueCat across StoreKit 2 / Play Billing / Microsoft Store, restore purchases, lifetime cross-platform unlock. Done when: sandbox purchases unlock Pro on each store.
 - [ ] **T29 — Localization and accessibility** · — · Top 10 languages, VoiceOver/TalkBack/Narrator pass, dynamic type. Done when: no untranslated strings; accessibility checklist passes.
 - [ ] **T30 — Release pipelines** · TESTING.md · Fastlane (iOS/macOS), Gradle AAB (Android), MSIX (Windows), notarized DMG, store metadata and privacy labels. Done when: a tagged release produces signed artifacts for all four platforms.
-
