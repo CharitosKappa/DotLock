@@ -75,8 +75,12 @@ sync_key         = HKDF(ikm = master_key, info = "dotlock/sync/v1")
 The phrase has 128 bits of entropy, so it needs no slow KDF. It alone locates the cloud bucket and
 unwraps the master key, so restore works on any device without the original container salt.
 
-Users may supply their own phrase instead of a generated one only if it passes a ≥ 100-bit estimate;
-in that case `phrase_entropy = Argon2id(NFKD(phrase), salt = "dotlock-custom-phrase-v1", m = 256 MiB, t = 4, p = 1)`.
+In v1, recovery phrases are generated from 16 bytes of OS CSPRNG entropy and encoded
+as 12 English BIP-39 words. Restore accepts a valid 12-word English BIP-39 phrase
+with its checksum verified and recovers the original 16-byte entropy directly;
+do not derive a BIP-39 seed or apply an additional passphrase/KDF to this entropy.
+User-written custom recovery phrases and their strength-estimation/KDF path are
+deferred beyond v1. Pattern and passphrase credentials in §3 remain supported.
 
 ## §5 Container layout (local, per install)
 

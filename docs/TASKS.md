@@ -16,8 +16,9 @@ Format: **ID — title** · SPEC refs · Done when.
   - Split: T2a dependency manifest/lockfile (generated lockfile exceeds 600 lines);
     T2b primitive APIs, tests and documentation; T2c upstream HKDF source/licenses
     with temporary-buffer erasure patch. Keep unchecked until merged.
-- [ ] **T3 — Streaming file encryption** · §2, §6 · STREAM BE32, 1 MiB chunks, last-chunk flag, `Read`/`Write` adapters. Done when: truncation, chunk reorder, chunk duplication and bit-flip tests fail closed; a 2 GB stream runs in constant memory (test with a generated reader).
-- [ ] **T4 — Credentials and phrases** · §3, §4 · Pattern validator + encoder (incl. auto-added in-between dots), passphrase NFKD encoder, BIP-39 generate/parse/validate, custom-phrase path, strength estimator. Done when: table-driven tests cover valid/invalid patterns, auto-add cases, NFKD edge cases, bad checksum phrases.
+- [x] **T3 — Streaming file encryption** · §2, §6 · STREAM BE32, 1 MiB chunks, last-chunk flag, `Read`/`Write` adapters. Done when: truncation, chunk reorder, chunk duplication and bit-flip tests fail closed; a 2 GB stream runs in constant memory (test with a generated reader).
+- [ ] **T4 — Credentials and phrases** · §3, §4 · Pattern validator + encoder (incl. auto-added in-between dots), passphrase NFKD encoder, 12-word English BIP-39 generate/parse/validate, advisory pattern strength estimator; custom recovery phrases deferred beyond v1. Done when: table-driven tests cover valid/invalid patterns, auto-add cases, NFKD edge cases, bad checksum phrases.
+  - Custom recovery phrase deferral approved on 2026-10-30; see SPEC_QUESTIONS Q1/Q2.
 - [ ] **T5 — Freeze v1 test vectors** · §12 · Generator binary + JSON vectors + a test that asserts them. Done when: regenerating produces byte-identical files and CI fails if outputs change.
 
 ## M2 — Vault format and storage (Rust)

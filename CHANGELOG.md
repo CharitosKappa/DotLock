@@ -4,6 +4,9 @@ All notable changes to DotLock are recorded here, newest first.
 
 ## Unreleased
 
+- T3 completed: PR #3 merged after all CI passed, including the 2 GiB Linux test.
+- T4 requirements review started; custom recovery phrase acceptance and Argon2
+  output length questions recorded before implementation, per AGENTS.md.
 - T2 completed: PR #2 merged after Linux/macOS/Windows Rust and Flutter CI passed.
 - T3: STREAM BE32 Read adapters and encrypted Write sink, authenticated 1 MiB
   chunks, length validation, terminal errors and zeroizing buffers. Boundary,
