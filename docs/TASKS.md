@@ -8,6 +8,10 @@ Format: **ID — title** · SPEC refs · Done when.
 ## M1 — Crypto core (Rust)
 
 - [ ] **T1 — Scaffold repo and CI** · — · Cargo workspace with the six crates from `docs/PLAN.md`, empty Flutter app in `app/`, `server/` crate, GitHub Actions running fmt/clippy/test on ubuntu, macos, windows. Done when: CI is green on all three runners.
+  - Split: T1a Rust workspace; T1b generated Flutter platform hosts; T1c empty
+    app, bootstrap test, docs and CI. SDK-generated hosts are committed separately
+    and exceed the approximate 600-line guideline. Keep T1 unchecked until CI
+    passes and the task is merged.
 - [ ] **T2 — Symmetric primitives** · §2, §4 · `dotlock-crypto`: Argon2id wrapper (params struct, minimums enforced), HKDF with label constants, XChaCha20-Poly1305 seal/open with `aad`, zeroizing key newtypes. Done when: round-trip, wrong-key, wrong-aad and tamper tests pass; secrets don't implement `Debug`.
 - [ ] **T3 — Streaming file encryption** · §2, §6 · STREAM BE32, 1 MiB chunks, last-chunk flag, `Read`/`Write` adapters. Done when: truncation, chunk reorder, chunk duplication and bit-flip tests fail closed; a 2 GB stream runs in constant memory (test with a generated reader).
 - [ ] **T4 — Credentials and phrases** · §3, §4 · Pattern validator + encoder (incl. auto-added in-between dots), passphrase NFKD encoder, BIP-39 generate/parse/validate, custom-phrase path, strength estimator. Done when: table-driven tests cover valid/invalid patterns, auto-add cases, NFKD edge cases, bad checksum phrases.
