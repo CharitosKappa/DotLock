@@ -4,6 +4,8 @@ All notable changes to DotLock are recorded here, newest first.
 
 ## Unreleased
 
+- T5 requirements review: recorded slot distinguishability/framing, cloud HMAC
+  verification, and deterministic serialization questions before freezing v1 bytes.
 - T4 completed: PR #5 merged after all CI passed; credentials and generated
   BIP-39 recovery are now on main.
 

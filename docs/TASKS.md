@@ -21,6 +21,9 @@ Format: **ID — title** · SPEC refs · Done when.
   - Custom recovery phrase deferral approved on 2026-10-30; see SPEC_QUESTIONS Q1/Q2.
     Implementation and tests merged in PR #5 after all CI passed.
 - [ ] **T5 — Freeze v1 test vectors** · §12 · Generator binary + JSON vectors + a test that asserts them. Done when: regenerating produces byte-identical files and CI fails if outputs change.
+  - Requirements review started; see SPEC_QUESTIONS Q3–Q5. Proposed split into
+    primitive vectors and later format/auth vectors awaits a scope decision.
+    No fixtures are frozen and no generator is implemented yet.
 
 ## M2 — Vault format and storage (Rust)
 
