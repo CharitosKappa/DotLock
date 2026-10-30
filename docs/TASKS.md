@@ -27,6 +27,7 @@ Format: **ID — title** · SPEC refs · Done when.
 - [ ] **T5 — Freeze v1 test vectors** · §12 · Generator binary + JSON vectors + a test that asserts them. Done when: regenerating produces byte-identical files and CI fails if outputs change.
   - [ ] **T5a — Implemented primitive vectors**: Argon2id, §4 HKDF labels, raw
     AEAD/STREAM, credential encoding and BIP-39; generator and frozen-byte CI checks.
+    Implementation added in a separate PR; tick this subtask only when merged.
   - [ ] **T5b — Format/auth vectors**: pair slot/object/index vectors with T6–T9
     and cloud-auth vectors with T24 after SPEC_QUESTIONS Q3–Q5 are settled.
     Parent T5 remains unchecked until both phases are merged. Split approved by user.

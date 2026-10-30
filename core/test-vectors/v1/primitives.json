@@ -1,0 +1,127 @@
+{
+  "argon2id": {
+    "credential_hex": "027075626c696320666978747572652070617373706872617365",
+    "expected_key_hex": "6e543c415c24c10845213a1121053452c830d08c49c5836879ec82106b7953d6",
+    "m_kib": 65536,
+    "p": 1,
+    "salt_hex": "0101010101010101010101010101010101010101010101010101010101010101",
+    "t": 3
+  },
+  "bip39": {
+    "entropy_hex": "03030303030303030303030303030303",
+    "expected_words": "adapt blossom school alcohol coral light army gather adapt blossom school almost"
+  },
+  "format_version": 1,
+  "hkdf_sha256": [
+    {
+      "expected_key_hex": "5c0d333810ad07397aa78f7992abbbf79eebdd224986413aae8b59f624606d9d",
+      "ikm_hex": "6e543c415c24c10845213a1121053452c830d08c49c5836879ec82106b7953d6",
+      "label": "dotlock/vault/v1",
+      "salt_hex": null
+    },
+    {
+      "expected_key_hex": "b7b809707131bcb9856ea72a6c3d9f46d57e37a1d8f4240e88e65fb58a3fba6c",
+      "ikm_hex": "6e543c415c24c10845213a1121053452c830d08c49c5836879ec82106b7953d6",
+      "label": "dotlock/locator/v1",
+      "salt_hex": null
+    },
+    {
+      "expected_key_hex": "6112033830d955f2ce5e3362092628e2dfec9e97831763e82f3535beabaf8503",
+      "ikm_hex": "0202020202020202020202020202020202020202020202020202020202020202",
+      "label": "dotlock/index/v1",
+      "salt_hex": null
+    },
+    {
+      "expected_key_hex": "245b6f14a42595c161eb930510b426803fabcee27f710588d9ce90b1bca2cd7a",
+      "ikm_hex": "0202020202020202020202020202020202020202020202020202020202020202",
+      "label": "dotlock/thumb/v1",
+      "salt_hex": "04040404040404040404040404040404"
+    },
+    {
+      "expected_key_hex": "25fe546dfdbdf492e39f5201a90e604f1453a8164fa56bbbe3d7fd107194b1cb",
+      "ikm_hex": "0202020202020202020202020202020202020202020202020202020202020202",
+      "label": "dotlock/file/v1",
+      "salt_hex": "04040404040404040404040404040404"
+    },
+    {
+      "expected_key_hex": "ea4b6d2483a613acac5e997686d2c3ea9232ff18a249c2b23fb6aa50da7d1212",
+      "ikm_hex": "03030303030303030303030303030303",
+      "label": "dotlock/recovery/v1",
+      "salt_hex": null
+    },
+    {
+      "expected_key_hex": "6d0e07ce939d9a2100fb3ad461805ce892f6e6e8c409394d9310d67a6a89293a",
+      "ikm_hex": "ea4b6d2483a613acac5e997686d2c3ea9232ff18a249c2b23fb6aa50da7d1212",
+      "label": "dotlock/recovery-wrap/v1",
+      "salt_hex": null
+    },
+    {
+      "expected_key_hex": "e604fe6e06dfa315dd79a23fd9c464025d83b3c5582974bf2a581c151e9ec263",
+      "ikm_hex": "ea4b6d2483a613acac5e997686d2c3ea9232ff18a249c2b23fb6aa50da7d1212",
+      "label": "dotlock/bucket/v1",
+      "salt_hex": null
+    },
+    {
+      "expected_key_hex": "9b89421f463bd2ac92a989f7b4fcd0925846599fe0282fdc643e5a07cc114e2b",
+      "ikm_hex": "ea4b6d2483a613acac5e997686d2c3ea9232ff18a249c2b23fb6aa50da7d1212",
+      "label": "dotlock/bucket-auth/v1",
+      "salt_hex": null
+    },
+    {
+      "expected_key_hex": "4ef489b5e220be4945be6eabb2a6892d658b6338598fe61613deda93b3bb6f4d",
+      "ikm_hex": "0202020202020202020202020202020202020202020202020202020202020202",
+      "label": "dotlock/sync/v1",
+      "salt_hex": null
+    }
+  ],
+  "notice": "PUBLIC synthetic fixtures; never use these keys or nonces for user data",
+  "passphrase": {
+    "expected_credential_hex": "02666978747572652070617373706872617365",
+    "input": "ﬁxture passphrase"
+  },
+  "pattern": {
+    "drawn": [
+      0,
+      4,
+      24
+    ],
+    "expected_credential_hex": "01050001020304090e1318"
+  },
+  "scope": "implemented-primitives-only",
+  "stream_be32": [
+    {
+      "aad_hex": "646f746c6f636b2f7075626c69632d666978747572652f7631",
+      "ciphertext_length": 16,
+      "expected_ciphertext_sha256": "84e0e2a729186c3b95b3f9c02e08a81f046ab812f936255b94ff60a62976aed4",
+      "key_hex": "0707070707070707070707070707070707070707070707070707070707070707",
+      "nonce_hex": "0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b",
+      "plaintext_byte_hex": "5a",
+      "plaintext_length": 0
+    },
+    {
+      "aad_hex": "646f746c6f636b2f7075626c69632d666978747572652f7631",
+      "ciphertext_length": 39,
+      "expected_ciphertext_sha256": "71404f62cafb3bab4dae3012c1fe5e1b50c3d8d7f17733859e2a148052d4b630",
+      "key_hex": "0707070707070707070707070707070707070707070707070707070707070707",
+      "nonce_hex": "0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b",
+      "plaintext_byte_hex": "5a",
+      "plaintext_length": 23
+    },
+    {
+      "aad_hex": "646f746c6f636b2f7075626c69632d666978747572652f7631",
+      "ciphertext_length": 1048611,
+      "expected_ciphertext_sha256": "53d749599e0a73e7c3f0253e8c0e6cc8edac4ef44e0644cbe2c9f9df6be88e03",
+      "key_hex": "0707070707070707070707070707070707070707070707070707070707070707",
+      "nonce_hex": "0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b",
+      "plaintext_byte_hex": "5a",
+      "plaintext_length": 1048579
+    }
+  ],
+  "xchacha20poly1305": {
+    "aad_hex": "646f746c6f636b2f7075626c69632d666978747572652f7631",
+    "expected_ciphertext_hex": "ce0780e615c959118d7c7c540d076e880a95dee23414ef8452b49ffa9a4b0908e8295a0dc1e56e03",
+    "key_hex": "0707070707070707070707070707070707070707070707070707070707070707",
+    "nonce_hex": "090909090909090909090909090909090909090909090909",
+    "plaintext_hex": "7075626c69632073796e7468657469632066697874757265"
+  }
+}
