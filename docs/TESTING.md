@@ -5,6 +5,12 @@ format compatibility.
 
 ## Testing
 
+- T3 local proof (Windows, optimized build): generated 2 GiB encrypted/decrypted
+  pipeline passed in 5.75 s with sampled peak working set 8.07 MiB. The source
+  generates bytes and the sink verifies/counts them without storing the stream.
+  Each adapter allocates one chunk buffer; this measurement is supporting evidence,
+  not a cross-platform memory benchmark. Run the dedicated ignored test in release
+  mode as configured in CI. Ordinary workspace tests cover adversarial streams.
 - Rust unit + property tests (`proptest`) for every crypto and format function.
 - `cargo-fuzz` targets for header, slot, index and object parsers; run nightly.
 - Frozen test vectors per format version (`core/test-vectors/`); every release must open every older vector.

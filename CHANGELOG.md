@@ -4,6 +4,10 @@ All notable changes to DotLock are recorded here, newest first.
 
 ## Unreleased
 
+- T2 completed: PR #2 merged after Linux/macOS/Windows Rust and Flutter CI passed.
+- T3: STREAM BE32 Read adapters and encrypted Write sink, authenticated 1 MiB
+  chunks, length validation, terminal errors and zeroizing buffers. Boundary,
+  tampering and property tests; generated 2 GiB round trip added to Linux CI.
 - T2: Argon2id v1.3 with validated minimums and zeroizing working memory;
   fixed-label HKDF-SHA256; XChaCha20-Poly1305 with random nonces and AAD;
   opaque zeroizing keys/plaintext; negative and property tests. Pending review.

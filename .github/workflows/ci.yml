@@ -26,6 +26,9 @@ jobs:
       - run: cargo fmt --all --check
       - run: cargo clippy --workspace --all-targets --locked -- -D warnings
       - run: cargo test --workspace --locked
+      - name: Generated 2 GiB streaming round trip
+        if: matrix.os == 'ubuntu-latest'
+        run: cargo test --release -p dotlock-crypto --test streaming --locked generated_two_gib -- --ignored --exact
 
   flutter:
     name: Flutter
